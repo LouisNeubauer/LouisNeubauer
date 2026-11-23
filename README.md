@@ -53,7 +53,7 @@ Advisor: **Prof. Roberto Rigobon**.
 
 Data centres are rewriting the load curve. The question this thesis asks is where the money goes because of it — into gas as a bridge, or into clean generation — and what actually drives that split.
 
-The research workspace is built like an engineering project, not a folder of drafts: a single source-of-truth state document, a **claims ledger** where every assertion is traced to its source, a decisions log, and specialist research agents for literature, data and review.
+The thesis is mine — the question, the argument and the writing. What I built around it is the apparatus that keeps it honest: a **claims ledger** that gates every number on a primary source before it may be used, a decisions log that names who decided what, and a tool-use record kept so that any disclosure my advisor or MIT asks for is already written. In May 2027 every figure in it should be re-derivable, not remembered.
 
 `Research engineering` `Energy economics` `Reproducible analysis`
 
