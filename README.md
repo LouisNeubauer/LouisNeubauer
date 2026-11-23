@@ -199,7 +199,6 @@ Branch-and-review from day one, nine weeks into learning to code. That is the pa
 |---|---|---|
 | **[LouisNeubauer](https://github.com/LouisNeubauer/LouisNeubauer)** | Profile README <sub>`JavaScript`</sub> | today |
 | **[The-AI-Edge---Restaurant-Inspection](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)** | MIT 15.071 "The AI Edge" — ranking Boston's 6,000 yearly restaurant inspections by risk of failing. Full analysis in nh13120/boston-restaurant-inspection-risk. | today |
-| **[dotfiles](https://github.com/LouisNeubauer/dotfiles)** | Default configuration for Le Wagon's students <sub>`Shell`</sub> | 5 years ago |
 
 <sub>Rebuilt automatically — last run 2026-11-23.</sub>
 
