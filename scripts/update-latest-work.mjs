@@ -83,7 +83,8 @@ export function render(repos, events) {
   );
 
   const active = repos
-    .filter((r) => !r.private && !r.archived && !isArchiveRepo(r))
+    // A fork is someone else's work; it does not belong under "Latest work".
+    .filter((r) => !r.private && !r.archived && !r.fork && !isArchiveRepo(r))
     .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
     .slice(0, MAX_REPOS);
 
