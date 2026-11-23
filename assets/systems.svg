@@ -43,7 +43,7 @@
   <!-- LANE 3 : PRODUCTS -->
   <text x="40" y="344" class="lane">PRODUCTS</text>
   <rect x="228" y="312" width="214" height="68" rx="10" fill="#065F46" stroke="#10B981"/>
-  <text x="335" y="339" class="n" text-anchor="middle">Private Tutor V1</text>
+  <text x="335" y="339" class="n" text-anchor="middle">Way2Excellence V1</text>
   <text x="335" y="358" class="d" text-anchor="middle">live</text>
 
   <rect x="500" y="312" width="214" height="68" rx="10" fill="#172033" stroke="#334155"/>

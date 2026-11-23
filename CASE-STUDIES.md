@@ -38,11 +38,11 @@
 
 ---
 
-# 2 · Way2Excellence — a tutor that proves it skipped nothing
+# 2 · Way2Excellence V1 — a tutor that proves it skipped nothing
 
 **The problem.** Study tools either drill you on what you already picked, or improvise explanations that sound right. Neither tells you what to do at eleven at night.
 
-<p align="center"><img src="assets/shots/way2excellence.png" alt="The Way2Excellence dashboard: a dated greeting, XP, streak and cards-due counters, and Today's quest — the day ordered by deadlines and classes first, then review, then new material." width="100%"></p>
+<p align="center"><img src="assets/shots/way2excellence.png" alt="The Way2Excellence dashboard: a dated greeting and Today's quest — the day ordered by deadlines and classes first, then review, then new material. Personal progress counters are left out of this screenshot." width="100%"></p>
 
 ### The decisions that matter
 
@@ -55,7 +55,7 @@
 **The dashboard answers one question.** Not "here is everything" — but *what should I do right now*: deadlines and classes first, then review, then new material.
 
 `JavaScript, no build step` · `Vercel` · `Neon Postgres` · `NVIDIA Nemotron` · `Canvas API`
-<sub>~25.7k lines · 60 test files · 39 API routes</sub>
+<sub>~25.7k lines · 60 test files · 39 API routes · V2 is a ground-up rebuild, in planning, so the two can be compared</sub>
 
 ---
 

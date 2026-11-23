@@ -82,7 +82,7 @@ Data centres are rewriting the load curve. This thesis asks where the money goes
 
 <sub>Not a folder of unrelated side projects: one template, one shared knowledge layer, products on top of both.</sub>
 
-<p align="center"><img src="assets/systems.svg" alt="System map: hackathon-template forked into BuildYourMind, which built Private Tutor V1 and The World's Journal; Study Archive supplies course material to the tutor, which was audited and rebuilt as Way2Excellence V2; the 15.071 project feeds the master's thesis." width="100%"></p>
+<p align="center"><img src="assets/systems.svg" alt="System map: hackathon-template forked into BuildYourMind, which built Way2Excellence V1 and The World's Journal; Study Archive supplies course material to the tutor, which was audited and rebuilt as Way2Excellence V2; the 15.071 project feeds the master's thesis." width="100%"></p>
 
 <br>
 
@@ -119,7 +119,7 @@ Data centres are rewriting the load curve. This thesis asks where the money goes
 | Project | What it is | Stack | |
 |---|---|---|---|
 | **Study Archive** 🔒 | A semester of course material, embedded into pgvector and answerable by a tutor that **cites the exact slide** | `Next.js` `TypeScript` `Prisma` `pgvector` `MCP` | 🟢 Running |
-| **Private Tutor V1** 🔒 | Teaches every topic from zero and **proves it skipped nothing** — each fact chipped with its source | `JavaScript` `Vercel` `Neon` `Nemotron` | 🟢 Live |
+| **Way2Excellence V1** 🔒 | Teaches every topic from zero and **proves it skipped nothing** — each fact chipped with its source | `JavaScript` `Vercel` `Neon` `Nemotron` | 🟢 Live |
 | **The World's Journal** 🔒 | Long-form publishing, built on one hard rule: **nothing goes public that the writer did not publish** | `JavaScript` `Vercel` `Postgres` | 🟡 Building |
 | **Way2Excellence V2** 🔒 | The tutor rebuilt from the evidence up — six sourced research memos settle the design before any code | `Research-first` | 🔵 Planning |
 | **BuildYourMind** 🔒 | The production template above: deployed skeleton from minute one, guardrails CI enforces | `Node 22` `Vercel` `Playwright` | 🟢 Maintained |
