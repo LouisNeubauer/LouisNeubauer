@@ -47,9 +47,14 @@ function describeEvent(e) {
   const repo = `[\`${e.repo.name}\`](https://github.com/${e.repo.name})`;
   switch (e.type) {
     case 'PushEvent': {
-      const n = e.payload?.commits?.length ?? 0;
+      // `commits` is capped and can come back empty even for a real push, so
+      // prefer the counts the API reports and fall back to the array length.
+      const n = e.payload?.distinct_size ?? e.payload?.size ?? e.payload?.commits?.length ?? 0;
       const msg = e.payload?.commits?.at(-1)?.message?.split('\n')[0];
-      return `Pushed ${n} commit${n === 1 ? '' : 's'} to ${repo}${msg ? ` — ${escape(msg)}` : ''}`;
+      // A push with nothing to say about it is noise on a profile page.
+      if (!n && !msg) return null;
+      const count = n ? `${n} commit${n === 1 ? '' : 's'}` : 'changes';
+      return `Pushed ${count} to ${repo}${msg ? ` — ${escape(msg)}` : ''}`;
     }
     case 'PullRequestEvent':
       return `${e.payload.action === 'closed' && e.payload.pull_request?.merged ? 'Merged' : `${e.payload.action[0].toUpperCase()}${e.payload.action.slice(1)}`} PR [#${e.payload.number}](${e.payload.pull_request?.html_url}) in ${repo} — ${escape(e.payload.pull_request?.title)}`;
