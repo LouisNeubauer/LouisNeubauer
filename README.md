@@ -4,7 +4,8 @@
 
 <p align="center">
   <a href="https://louisneubauer.com"><img alt="Website" src="https://img.shields.io/badge/Website-louisneubauer.com-0B1220?style=for-the-badge&logo=safari&logoColor=white"></a>
-  <img alt="Focus" src="https://img.shields.io/badge/Focus-Applied%20AI%20·%20Energy%20·%20Product-6366F1?style=for-the-badge">
+  <a href="https://www.linkedin.com/in/louis-neubauer/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <img alt="Focus" src="https://img.shields.io/badge/Focus-Finance%20·%20Applied%20AI%20·%20Product-6366F1?style=for-the-badge">
 </p>
 
 ---
@@ -13,10 +14,10 @@
 
 I am a **Master of Science in Management Studies candidate at MIT Sloan (2027)**, and I build things that run in production rather than in a slide deck.
 
-My work sits where three lines meet: **machine learning that changes a real decision**, **products that survive past the demo**, and **capital allocation in energy markets**. The projects below are the evidence.
+I am heading into **finance**, and I come at it from the technical side: I would rather build the model and the tool than wait for someone else to. My work sits where three lines meet — **capital allocation and energy markets**, **machine learning that changes a real decision**, and **products that survive past the demo**. The projects below are the evidence.
 
 ```text
-Decisions worth making  →  models that earn their place  →  software that stays up
+Capital decisions  →  models that earn their place  →  software that stays up
 ```
 
 <br>
@@ -102,14 +103,97 @@ flowchart LR
 
 <br>
 
+## 🗺️ How the pieces fit together
+
+Not a folder of unrelated side projects. One template, one shared ingestion
+layer, and products built on top of both.
+
+```mermaid
+flowchart TB
+    subgraph FOUND["⚙️ Foundation"]
+        BYM["<b>BuildYourMind</b><br/><sub>production template</sub>"]
+        HT["<b>hackathon-template</b><br/><sub>deadline variant</sub>"]
+    end
+
+    subgraph DATA["🧠 Knowledge layer"]
+        SA["<b>Study Archive</b><br/><sub>ingest · embed · index<br/>pgvector + concept graph</sub>"]
+    end
+
+    subgraph PROD["🚀 Products"]
+        PT["<b>Private Tutor V1</b><br/><sub>live</sub>"]
+        W2E["<b>Way2Excellence V2</b><br/><sub>research-led rebuild</sub>"]
+        TWJ["<b>The World's Journal</b><br/><sub>publishing platform</sub>"]
+    end
+
+    subgraph RES["📊 Research"]
+        THESIS["<b>Thesis</b><br/><sub>AI electricity demand<br/>&amp; capital allocation</sub>"]
+        AIEDGE["<b>15.071</b><br/><sub>inspection risk ranking</sub>"]
+    end
+
+    HT -.->|"forked into"| BYM
+    BYM ==> PT
+    BYM ==> TWJ
+    SA ==>|"course material,<br/>read-only"| PT
+    PT -.->|"audited, then rebuilt as"| W2E
+    AIEDGE -.->|"methods carried into"| THESIS
+
+    style BYM fill:#312E81,stroke:#6366F1,color:#F8FAFC
+    style SA fill:#1E3A8A,stroke:#38BDF8,color:#F8FAFC
+    style PT fill:#065F46,stroke:#10B981,color:#F8FAFC
+    style TWJ fill:#065F46,stroke:#10B981,color:#F8FAFC
+    style THESIS fill:#7C2D12,stroke:#F97316,color:#F8FAFC
+    style AIEDGE fill:#7C2D12,stroke:#F97316,color:#F8FAFC
+```
+
+<br>
+
+## 📐 Engineering, in numbers
+
+Everything below is my own code — written, tested and deployed, not scaffolded and abandoned.
+
+<table>
+<tr>
+<td align="center"><h3>~87k</h3><sub>lines of TypeScript,<br>JavaScript and SQL<br>across five live projects</sub></td>
+<td align="center"><h3>~190</h3><sub>test files — unit, API,<br>security, accessibility,<br>load and real-browser</sub></td>
+<td align="center"><h3>90+</h3><sub>API routes<br>serving production<br>traffic</sub></td>
+<td align="center"><h3>30</h3><sub>database models<br>in the archive<br>schema alone</sub></td>
+</tr>
+</table>
+
+**What those tests actually cover** — because a test count on its own means nothing:
+
+| | |
+|---|---|
+| 🔒 `security.test.js` | CSP and Trusted Types hold, SQL stays parameterised, no secret reaches the repository |
+| ♿ `a11y.test.js` | Every feature is usable by keyboard and by a screen reader — enforced, not aspirational |
+| 🌐 `browser.test.js` | Real Chromium via Playwright, against the running application |
+| 📈 `api-load.test.js` | Routes under concurrency, with rate limiting proven to engage |
+| 💸 `ai.test.js` | The daily AI budget guard and kill switch actually stop a runaway loop |
+| 🗄️ `*.db.test.js` | Database behaviour against a real Postgres, not a mock that agrees with me |
+
+## 🧠 Machine learning, specifically
+
+Not "uses AI". Here is what is actually running:
+
+| System | What the neural network does | How it is kept honest |
+|---|---|---|
+| **Study Archive retrieval** | `voyage-4-large` embeds every chunk into **1024-dimensional vectors**, stored in Postgres via **pgvector** and searched by cosine distance over an **HNSW index**. A second neural model — a **cross-encoder reranker** — re-scores the shortlist by reading query and passage together. | Dense, lexical and concept-graph arms are fused by **Reciprocal Rank Fusion** rather than by adding incomparable scores. Every ranking change is scored against a hand-built golden set. |
+| **Study Archive understanding** | LLM passes extract concepts, build the concept graph and tag chunks against it. | Concepts are reviewed; the per-document fallback is explicit, not silent. |
+| **Private Tutor** | A large model answers; a **separate, smaller model verifies** the answer against the source material before it is shown. | Teaching material is authored in reviewable sessions, never improvised at request time. |
+| **Inspection risk ranking** | Gradient-boosted trees over inspection history; a **fine-tuned MiniLM transformer** over inspector comments as a second model. | Settings frozen before the test years. The transformer gained **one point** — and was **not** shipped, because one point does not justify serving a neural network. |
+
+> **The pattern:** reach for the heavier model only when the measurement says it earns its place — and say so out loud when it does not.
+
+<br>
+
 ## 📦 Projects
 
 <table>
 <tr><th align="left">Project</th><th align="left">What it is</th><th align="left">Stack</th><th align="left">Status</th></tr>
 
 <tr><td><b>Study Archive</b><br><sub>🔒 private</sub></td>
-<td>Every lecture slide, reading, note, problem set and recording from a semester — ingested automatically, indexed by course, week and concept, and answerable by a tutor that <b>cites the exact slide</b>. Retrieval quality is measured against a hand-built golden set, not guessed at.</td>
-<td><code>Next.js</code> <code>TypeScript</code> <code>Prisma</code> <code>Neon</code> <code>Claude API</code> <code>WebAuthn</code> <code>R2</code></td>
+<td>Every lecture slide, reading, note, problem set and recording from a semester — ingested automatically, embedded into a <b>pgvector</b> index, organised into a concept graph, and answerable by a tutor that <b>cites the exact slide</b>. Three retrieval arms fused by rank, then reranked by a cross-encoder; every change scored against a golden set.</td>
+<td><code>Next.js</code> <code>TypeScript</code> <code>Prisma</code> <code>pgvector</code> <code>Neon</code> <code>Claude API</code> <code>WebAuthn</code> <code>MCP</code></td>
 <td>🟢 Running</td></tr>
 
 <tr><td><b>Private Tutor (V1)</b><br><sub>🔒 private</sub></td>
@@ -222,11 +306,12 @@ The repositories below are that apprenticeship, left exactly as it happened:
 ---
 
 <p align="center">
-  <b>Open to summer 2027 internships</b> in applied AI, data science and product.<br>
-  <sub>Machine learning · Applied AI · Full-stack product · Energy &amp; capital markets</sub>
+  <b>Open to summer 2027 internships</b> in finance, applied AI and data-driven product.<br>
+  <sub>Capital markets &amp; energy · Machine learning · Applied AI · Full-stack product</sub>
 </p>
 
 <p align="center">
   <a href="https://louisneubauer.com">Website</a> ·
+  <a href="https://www.linkedin.com/in/louis-neubauer/">LinkedIn</a> ·
   <a href="https://github.com/LouisNeubauer?tab=repositories">All repositories</a>
 </p>

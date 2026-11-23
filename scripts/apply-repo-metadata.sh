@@ -25,6 +25,20 @@ set_meta() {
   fi
 }
 
+make_public() {
+  local repo="$1"
+  if gh api -X PATCH "repos/$OWNER/$repo" -f visibility=public --silent 2>/dev/null; then
+    printf '  ✅ %s is now public\n' "$repo"
+  else
+    printf '  ❌ %s — could not change visibility\n' "$repo"
+  fi
+}
+
+echo "Making the Le Wagon final project visible…"
+make_public The_card
+make_public Le_Card
+
+echo
 echo "Applying descriptions and topics…"
 set_meta The-AI-Edge---Restaurant-Inspection $'MIT 15.071 "The AI Edge" \342\200\224 ranking Boston\'s 6,000 yearly restaurant inspections by risk of failing. Full analysis in nh13120/boston-restaurant-inspection-risk.' machine-learning\,lightgbm\,python\,mit\,data-science\,public-policy
 set_meta The_card $'Le Wagon final project (2021) \342\200\224 a Ruby on Rails restaurant ordering app: accounts, menus, orders and QR-code table ordering.' ruby-on-rails\,ruby\,devise\,postgresql\,bootcamp-project\,le-wagon
@@ -50,3 +64,33 @@ set_meta test-idea A\ scratch\ project\ used\ to\ exercise\ the\ BuildYourMind\ 
 set_meta draft1 $'Retired \342\200\224 the Study Tutor built here now lives in study-archive.' archived-project\,retired
 
 printf '\n%s updated, %s failed.\n' "$ok" "$fail"
+
+# ── Link the now-public repositories from the profile ────────────────────
+# Done last and only here, so the profile never carries a link to a private
+# repository — which would 404 for exactly the people the page is written for.
+echo
+echo "Linking them from the profile README…"
+cd "$(dirname "$0")/.."
+python3 - <<'RELINK'
+import pathlib, subprocess
+p = pathlib.Path("README.md"); s = p.read_text()
+subs = [
+    ("| **The_card** 🏆 <sub>🔒 private</sub> |",
+     "| [**The_card**](https://github.com/LouisNeubauer/The_card) 🏆 |"),
+    ("| **Le_Card** <sub>🔒 private</sub> |",
+     "| [Le_Card](https://github.com/LouisNeubauer/Le_Card) |"),
+]
+changed = False
+for old, new in subs:
+    if old in s:
+        s = s.replace(old, new); changed = True
+if changed:
+    p.write_text(s)
+    subprocess.run(["git", "add", "README.md"], check=True)
+    subprocess.run(["git", "commit", "-m",
+        "Link The_card and Le_Card now that they are public"], check=True)
+    subprocess.run(["git", "push"], check=True)
+    print("  ✅ profile README updated and pushed")
+else:
+    print("  – profile README already links them")
+RELINK
