@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 520" width="1240" height="520" role="img" aria-label="How the projects fit together: a production template feeding two shipped products, a knowledge layer feeding the tutor, and a research track from the course project into the thesis.">
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/><stop offset="100%" stop-color="#0E1A2F"/>
+    </linearGradient>
+    <linearGradient id="sacc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/><stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <marker id="sa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#94A3B8"/>
+    </marker>
+    <style>
+      .lane { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:11px; fill:#64748B; letter-spacing:1.6px; }
+      .n    { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:15px; font-weight:700; fill:#F8FAFC; }
+      .d    { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:11px; fill:#94A3B8; }
+      .e    { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:10.5px; fill:#7DD3FC; }
+      .pill { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:.6px; }
+    </style>
+  </defs>
+
+  <rect width="1240" height="520" rx="14" fill="url(#sbg)"/>
+  <rect x="0" y="0" width="1240" height="3" rx="1.5" fill="url(#sacc)"/>
+  <line x1="196" y1="40" x2="196" y2="486" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- LANE 1 : FOUNDATION -->
+  <text x="40" y="84" class="lane">FOUNDATION</text>
+  <rect x="228" y="54" width="214" height="64" rx="10" fill="#172033" stroke="#334155"/>
+  <text x="335" y="80"  class="n" text-anchor="middle">hackathon-template</text>
+  <text x="335" y="99"  class="d" text-anchor="middle">built for a deadline</text>
+
+  <rect x="500" y="54" width="214" height="64" rx="10" fill="#312E81" stroke="#818CF8"/>
+  <text x="607" y="80"  class="n" text-anchor="middle">BuildYourMind</text>
+  <text x="607" y="99"  class="d" text-anchor="middle">production template · guardrails</text>
+  <path d="M442 86 H494" stroke="#94A3B8" stroke-width="1.6" fill="none" marker-end="url(#sa)"/>
+  <text x="468" y="76" class="e" text-anchor="middle">forked</text>
+
+  <!-- LANE 2 : KNOWLEDGE -->
+  <text x="40" y="214" class="lane">KNOWLEDGE</text>
+  <rect x="228" y="182" width="330" height="68" rx="10" fill="#1E3A8A" stroke="#38BDF8"/>
+  <text x="393" y="209" class="n" text-anchor="middle">Study Archive</text>
+  <text x="393" y="228" class="d" text-anchor="middle">ingest · embed · pgvector + concept graph</text>
+
+  <!-- LANE 3 : PRODUCTS -->
+  <text x="40" y="344" class="lane">PRODUCTS</text>
+  <rect x="228" y="312" width="214" height="68" rx="10" fill="#065F46" stroke="#10B981"/>
+  <text x="335" y="339" class="n" text-anchor="middle">Private Tutor V1</text>
+  <text x="335" y="358" class="d" text-anchor="middle">live</text>
+
+  <rect x="500" y="312" width="214" height="68" rx="10" fill="#172033" stroke="#334155"/>
+  <text x="607" y="339" class="n" text-anchor="middle">Way2Excellence V2</text>
+  <text x="607" y="358" class="d" text-anchor="middle">evidence-led rebuild</text>
+
+  <rect x="772" y="312" width="214" height="68" rx="10" fill="#065F46" stroke="#10B981"/>
+  <text x="879" y="339" class="n" text-anchor="middle">The World&#8217;s Journal</text>
+  <text x="879" y="358" class="d" text-anchor="middle">building</text>
+
+  <!-- template feeds the two products it built -->
+  <path d="M590 118 V286 H335 V300" stroke="#94A3B8" stroke-width="1.6" fill="none" marker-end="url(#sa)"/>
+  <path d="M654 118 V286 H879 V300" stroke="#94A3B8" stroke-width="1.6" fill="none" marker-end="url(#sa)"/>
+  <!-- archive feeds the tutor -->
+  <path d="M290 250 V300" stroke="#38BDF8" stroke-width="1.6" fill="none" marker-end="url(#sa)"/>
+  <text x="300" y="277" class="e">course material, read-only</text>
+  <!-- V1 audited then rebuilt as V2: direct, nothing in between -->
+  <path d="M442 346 H494" stroke="#94A3B8" stroke-width="1.5" fill="none" marker-end="url(#sa)" stroke-dasharray="4 4"/>
+  <text x="468" y="394" class="e" text-anchor="middle">audited, then rebuilt</text>
+
+  <!-- LANE 4 : RESEARCH -->
+  <text x="40" y="452" class="lane">RESEARCH</text>
+  <rect x="228" y="424" width="214" height="60" rx="10" fill="#7C2D12" stroke="#F97316"/>
+  <text x="335" y="449" class="n" text-anchor="middle">MIT 15.071</text>
+  <text x="335" y="467" class="d" text-anchor="middle">inspection risk ranking</text>
+
+  <rect x="500" y="424" width="330" height="60" rx="10" fill="#7C2D12" stroke="#F97316"/>
+  <text x="665" y="449" class="n" text-anchor="middle">Master&#8217;s thesis</text>
+  <text x="665" y="467" class="d" text-anchor="middle">AI electricity demand &amp; capital allocation</text>
+  <path d="M442 454 H494" stroke="#94A3B8" stroke-width="1.6" fill="none" marker-end="url(#sa)"/>
+
+  <!-- legend pill -->
+  <rect x="1012" y="54" width="186" height="64" rx="10" fill="#0F172A" stroke="#1E293B"/>
+  <circle cx="1032" cy="76" r="5" fill="#10B981"/><text x="1046" y="80" class="pill" fill="#CBD5E1">shipped / live</text>
+  <circle cx="1032" cy="98" r="5" fill="#F97316"/><text x="1046" y="102" class="pill" fill="#CBD5E1">research</text>
+</svg>

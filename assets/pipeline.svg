@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 260" width="1240" height="260" role="img" aria-label="Build pipeline: idea, locked plan, build, guardrails, CI, deploy, live check — healthy keeps running, a regression rolls back automatically.">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/><stop offset="100%" stop-color="#0E1A2F"/>
+    </linearGradient>
+    <linearGradient id="pacc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38BDF8"/><stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#64748B"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#10B981"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#EF4444"/>
+    </marker>
+    <style>
+      .t  { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:14px; font-weight:600; fill:#F1F5F9; }
+      .s  { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:10.5px; fill:#94A3B8; }
+      .lb { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:10px; fill:#64748B; letter-spacing:.4px; }
+      .ok { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; fill:#6EE7B7; }
+      .bad{ font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; fill:#FCA5A5; }
+    </style>
+  </defs>
+
+  <rect width="1240" height="260" rx="14" fill="url(#pbg)"/>
+  <rect x="0" y="0" width="1240" height="3" rx="1.5" fill="url(#pacc)"/>
+
+  <!-- main row: 7 boxes, w=136 h=62, gap=26, start x=46, y=54 -->
+  <g>
+    <rect x="46"  y="54" width="136" height="62" rx="10" fill="#1E293B" stroke="#38BDF8"/>
+    <text x="114" y="80"  class="t"  text-anchor="middle">Idea</text>
+    <text x="114" y="98"  class="s"  text-anchor="middle">one sentence</text>
+
+    <rect x="208" y="54" width="136" height="62" rx="10" fill="#172033" stroke="#334155"/>
+    <text x="276" y="80"  class="t"  text-anchor="middle">Plan</text>
+    <text x="276" y="98"  class="s"  text-anchor="middle">approved, locked</text>
+
+    <rect x="370" y="54" width="136" height="62" rx="10" fill="#172033" stroke="#334155"/>
+    <text x="438" y="80"  class="t"  text-anchor="middle">Build</text>
+    <text x="438" y="98"  class="s"  text-anchor="middle">generators · recipes</text>
+
+    <rect x="532" y="54" width="136" height="62" rx="10" fill="#312E81" stroke="#818CF8"/>
+    <text x="600" y="80"  class="t"  text-anchor="middle">Guardrails</text>
+    <text x="600" y="98"  class="s"  text-anchor="middle">cannot be argued with</text>
+
+    <rect x="694" y="54" width="136" height="62" rx="10" fill="#172033" stroke="#334155"/>
+    <text x="762" y="80"  class="t"  text-anchor="middle">CI</text>
+    <text x="762" y="98"  class="s"  text-anchor="middle">check · test · migrate</text>
+
+    <rect x="856" y="54" width="136" height="62" rx="10" fill="#065F46" stroke="#10B981"/>
+    <text x="924" y="80"  class="t"  text-anchor="middle">Deploy</text>
+    <text x="924" y="98"  class="s"  text-anchor="middle">Vercel</text>
+
+    <rect x="1018" y="54" width="136" height="62" rx="10" fill="#172033" stroke="#334155"/>
+    <text x="1086" y="80" class="t"  text-anchor="middle">Live check</text>
+    <text x="1086" y="98" class="s"  text-anchor="middle">against production</text>
+  </g>
+
+  <!-- forward arrows -->
+  <g stroke="#64748B" stroke-width="1.6" marker-end="url(#ar)" fill="none">
+    <path d="M182 85 H202"/><path d="M344 85 H364"/><path d="M506 85 H526"/>
+    <path d="M668 85 H688"/><path d="M830 85 H850"/><path d="M992 85 H1012"/>
+  </g>
+
+  <!-- guardrail reject loop back to Build -->
+  <path d="M566 116 V146 H472 V116" stroke="#F97316" stroke-width="1.6" fill="none" marker-end="url(#ar)" stroke-dasharray="4 3"/>
+  <text x="519" y="161" class="lb" text-anchor="middle" fill="#F97316">FAILS → BACK TO BUILD</text>
+
+  <!-- outcomes -->
+  <path d="M1086 116 V164 H900" stroke="#10B981" stroke-width="1.8" fill="none" marker-end="url(#arg)"/>
+  <path d="M1086 116 V212 H900" stroke="#EF4444" stroke-width="1.8" fill="none" marker-end="url(#arr)" stroke-dasharray="5 4"/>
+
+  <text x="888" y="169" class="ok"  text-anchor="end">✓  Healthy — it keeps running</text>
+  <text x="888" y="217" class="bad" text-anchor="end">✗  Regression — rolls back automatically</text>
+
+  <text x="46" y="232" class="lb">EVERY STEP IS ENFORCED BY HOOKS, BY CI, AND AGAIN AFTER DEPLOY — NOT BY REMEMBERING</text>
+</svg>
