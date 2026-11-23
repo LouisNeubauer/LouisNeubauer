@@ -49,16 +49,14 @@ We also measured the fairness cost and shipped the version **without** location 
 
 Data centres are rewriting the load curve. This thesis asks where the money goes because of it — into gas as a bridge, or into clean generation.
 
-| The apparatus I built around it | |
-|---|---|
-| 📒 Claims ledger | no number is used before a primary source confirms it |
-| 🗳️ Decisions log | every decision dated and attributed |
-| 📝 Tool-use log | disclosure to advisor or MIT already written |
-| 🔒 Data rules | licensed exports never leave MIT OneDrive |
+**The thesis is mine** — the question, the argument and the writing. What I built around it is the machinery that keeps it honest:
+
+- 📒 **Claims ledger** — no number is used until a primary source confirms it
+- 🗳️ **Decisions log** — every decision dated and attributed
+- 📝 **Tool-use log** — disclosure already written
+- 🔒 **Data rules** — licensed exports never leave MIT OneDrive
 
 **→ By May 2027 every figure should be re-derivable from its source, not remembered.**
-
-The thesis is mine — the question, the argument and the writing. The repository is the machinery that keeps it honest.
 
 <sub>🔒 Private — happy to walk through the methodology.</sub>
 
