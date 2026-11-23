@@ -146,13 +146,14 @@ Branch-and-review from day one, nine weeks into learning to code. That is the pa
 <td width="40%" valign="top">
 
 ### The apprenticeship
-[`rails-watch-list`](https://github.com/LouisNeubauer/rails-watch-list) — many-to-many, modelled properly
-[`rails-wikinimous`](https://github.com/LouisNeubauer/rails-wikinimous) — full CRUD, one route at a time
-[`rails-task-manager`](https://github.com/LouisNeubauer/rails-task-manager) — the seven REST actions, by hand
-[`rails-longest-word-game`](https://github.com/LouisNeubauer/rails-longest-word-game) — sessions and an external API
-[`rails-stupid-coaching`](https://github.com/LouisNeubauer/rails-stupid-coaching) — the first controller
-[`Sailing-School`](https://github.com/LouisNeubauer/Sailing-School) — a landing page, every pixel by hand
-[`first-website`](https://github.com/LouisNeubauer/first-website) — where it genuinely began 🍺
+
+- [`rails-watch-list`](https://github.com/LouisNeubauer/rails-watch-list) — many-to-many, modelled properly
+- [`rails-wikinimous`](https://github.com/LouisNeubauer/rails-wikinimous) — full CRUD, one route at a time
+- [`rails-task-manager`](https://github.com/LouisNeubauer/rails-task-manager) — the seven REST actions, by hand
+- [`rails-longest-word-game`](https://github.com/LouisNeubauer/rails-longest-word-game) — sessions and an external API
+- [`rails-stupid-coaching`](https://github.com/LouisNeubauer/rails-stupid-coaching) — the first controller
+- [`Sailing-School`](https://github.com/LouisNeubauer/Sailing-School) — a landing page, every pixel by hand
+- [`first-website`](https://github.com/LouisNeubauer/first-website) — where it genuinely began 🍺
 
 <sub>Also [`Le_Card`](https://github.com/LouisNeubauer/Le_Card) and [`R_a_R`](https://github.com/LouisNeubauer/R_a_R) — kept honestly as the drafts they are.</sub>
 
