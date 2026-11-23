@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="CASE-STUDIES.md"><img alt="Case studies" src="https://img.shields.io/badge/Case%20studies-0B1220?style=for-the-badge&logo=readme&logoColor=white"></a>
+  <a href="https://the-worlds-journal-v1.vercel.app"><img alt="Live demo" src="https://img.shields.io/badge/Live%20demo-The%20World%27s%20Journal-10B981?style=for-the-badge&logo=vercel&logoColor=white"></a>
   <a href="https://www.linkedin.com/in/louis-neubauer/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <a href="https://github.com/nh13120/boston-restaurant-inspection-risk"><img alt="Featured project" src="https://img.shields.io/badge/Featured%20project-6366F1?style=for-the-badge"></a>
 </p>
@@ -120,7 +121,7 @@ Data centres are rewriting the load curve. This thesis asks where the money goes
 |---|---|---|---|
 | **Study Archive** 🔒 | A semester of course material, embedded into pgvector and answerable by a tutor that **cites the exact slide** | `Next.js` `TypeScript` `Prisma` `pgvector` `MCP` | 🟢 Running |
 | **Way2Excellence V1** 🔒 | Teaches every topic from zero and **proves it skipped nothing** — each fact chipped with its source | `JavaScript` `Vercel` `Neon` `Nemotron` | 🟢 Live |
-| **The World's Journal** 🔒 | Long-form publishing, built on one hard rule: **nothing goes public that the writer did not publish** | `JavaScript` `Vercel` `Postgres` | 🟡 Building |
+| **[The World's Journal](https://the-worlds-journal-v1.vercel.app)** 🔗 | Long-form publishing, built on one hard rule: **nothing goes public that the writer did not publish** | `JavaScript` `Vercel` `Postgres` | 🟢 Live |
 | **Way2Excellence V2** 🔒 | The tutor rebuilt from the evidence up — six sourced research memos settle the design before any code | `Research-first` | 🔵 Planning |
 | **BuildYourMind** 🔒 | The production template above: deployed skeleton from minute one, guardrails CI enforces | `Node 22` `Vercel` `Playwright` | 🟢 Maintained |
 | **hackathon-template** 🔒 | Same foundation, tuned for a clock: idea to live app in 15–20 minutes | `Node 22` `Vercel` `Neon` | 🟢 Maintained |
@@ -211,5 +212,5 @@ Branch-and-review from day one, nine weeks into learning to code. That is the pa
 
 <p align="center">
   <b>Open to summer 2027 internships</b> in finance, applied AI and data-driven product.<br>
-  <a href="CASE-STUDIES.md">Case studies</a> · <a href="https://www.linkedin.com/in/louis-neubauer/">LinkedIn</a> · <a href="https://github.com/LouisNeubauer?tab=repositories">All repositories</a>
+  <a href="CASE-STUDIES.md">Case studies</a> · <a href="https://the-worlds-journal-v1.vercel.app">Live demo</a> · <a href="https://www.linkedin.com/in/louis-neubauer/">LinkedIn</a> · <a href="https://github.com/LouisNeubauer?tab=repositories">All repositories</a>
 </p>

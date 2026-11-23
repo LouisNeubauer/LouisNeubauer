@@ -61,6 +61,8 @@
 
 # 3 · The World's Journal — publishing that respects the writer
 
+<p align="center"><b><a href="https://the-worlds-journal-v1.vercel.app">Open it →</a></b>  <sub>· live, no sign-in needed to read</sub></p>
+
 **The problem.** Long-form writing online is squeezed between social feeds optimised for speed and publishing tools optimised for everyone except the writer.
 
 <p align="center"><img src="assets/shots/worlds-journal.png" alt="The World's Journal landing page: a serif masthead, the line 'A media platform where everyone has their own journal', and a quiet two-button call to action." width="100%"></p>
@@ -74,7 +76,7 @@
 **Start with one audience.** US graduate students first, and the people around them. A product built for everybody reads as though it was built for nobody — and the register of the whole design follows from knowing who opens it.
 
 `JavaScript, no build step` · `Vercel` · `Neon Postgres`
-<sub>~19.1k lines · 40 test files</sub>
+<sub>~19.1k lines · 40 test files · <a href="https://the-worlds-journal-v1.vercel.app">live</a></sub>
 
 ---
 
