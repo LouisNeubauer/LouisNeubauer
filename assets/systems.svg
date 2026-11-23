@@ -52,7 +52,7 @@
 
   <rect x="772" y="312" width="214" height="68" rx="10" fill="#065F46" stroke="#10B981"/>
   <text x="879" y="339" class="n" text-anchor="middle">The World&#8217;s Journal</text>
-  <text x="879" y="358" class="d" text-anchor="middle">building</text>
+  <text x="879" y="358" class="d" text-anchor="middle">live</text>
 
   <!-- template feeds the two products it built -->
   <path d="M590 118 V286 H335 V300" stroke="#94A3B8" stroke-width="1.6" fill="none" marker-end="url(#sa)"/>
