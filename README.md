@@ -237,7 +237,7 @@ The repositories below are that apprenticeship, left exactly as it happened:
 
 | Repository | The lesson |
 |---|---|
-| [**The_card**](https://github.com/LouisNeubauer/The_card) 🏆 | **Final project.** A full restaurant ordering app: authentication, restaurants → menus → orders → line items, QR-code table ordering, live cart updates. The first time all the pieces had to work together. |
+| [**The_card**](https://github.com/LouisNeubauer/The_card) 🏆 | **Final project.** A QR-code restaurant ordering app — accounts, menus, live orders, line items. Built by a team of five in 23 days: **266 commits through 121 reviewed pull requests**, of which 75 commits are mine. Branch-and-review from day one, nine weeks into learning to code. |
 | [Le_Card](https://github.com/LouisNeubauer/Le_Card) | The first run at that domain model — kept, because the second one was better for having had a first. |
 | [rails-watch-list](https://github.com/LouisNeubauer/rails-watch-list) | Many-to-many relationships, modelled properly: lists, movies and the bookmarks between them. |
 | [rails-wikinimous](https://github.com/LouisNeubauer/rails-wikinimous) | Full CRUD by hand, one route at a time — before `resources` made it invisible. |
