@@ -198,10 +198,8 @@ Branch-and-review from day one, nine weeks into learning to code. That is the pa
 | Repository | What it is | Last update |
 |---|---|---|
 | **[LouisNeubauer](https://github.com/LouisNeubauer/LouisNeubauer)** | Profile README <sub>`JavaScript`</sub> | today |
-| **[The_card](https://github.com/LouisNeubauer/The_card)** | Le Wagon final project (2021) — a Ruby on Rails restaurant ordering app: accounts, menus, orders and QR-code table ordering. <sub>`Ruby`</sub> | today |
-| **[R_a_R](https://github.com/LouisNeubauer/R_a_R)** | Le Wagon (2021) — Rails application scaffold from the final project sprint. <sub>`Ruby`</sub> | today |
-| **[rails-yelp-mvp](https://github.com/LouisNeubauer/rails-yelp-mvp)** | Le Wagon (2021) — Rails MVP scaffold: database setup and model generation. <sub>`Ruby`</sub> | today |
-| **[rails-watch-list](https://github.com/LouisNeubauer/rails-watch-list)** | Le Wagon (2021) — many-to-many modelling in Rails: lists, movies and the bookmarks between them. <sub>`Ruby`</sub> | today |
+| **[The-AI-Edge---Restaurant-Inspection](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)** | MIT 15.071 "The AI Edge" — ranking Boston's 6,000 yearly restaurant inspections by risk of failing. Full analysis in nh13120/boston-restaurant-inspection-risk. | today |
+| **[dotfiles](https://github.com/LouisNeubauer/dotfiles)** | Default configuration for Le Wagon's students <sub>`Shell`</sub> | 5 years ago |
 
 <sub>Rebuilt automatically — last run 2026-11-23.</sub>
 
