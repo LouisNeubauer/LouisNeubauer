@@ -203,7 +203,17 @@ The repositories below are that apprenticeship, left exactly as it happened:
 ## 📡 Latest work
 
 <!-- LATEST-WORK:START -->
-_Updating…_
+
+| Repository | What it is | Last update |
+|---|---|---|
+| **[LouisNeubauer](https://github.com/LouisNeubauer/LouisNeubauer)** | Profile README <sub>`JavaScript`</sub> | today |
+| **[The-AI-Edge---Restaurant-Inspection](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)** | _No description yet._ | 11 days ago |
+| **[R_a_R](https://github.com/LouisNeubauer/R_a_R)** | next try <sub>`Ruby`</sub> | 5 years ago |
+| **[rails-watch-list](https://github.com/LouisNeubauer/rails-watch-list)** | Challenge 1 12.08.2021 <sub>`Ruby`</sub> | 5 years ago |
+| **[rails-yelp-mvp](https://github.com/LouisNeubauer/rails-yelp-mvp)** | Challenge 2 11.08.2021 <sub>`Ruby`</sub> | 5 years ago |
+
+<sub>Rebuilt automatically — last run 2026-11-23.</sub>
+
 <!-- LATEST-WORK:END -->
 
 <sub>This section rebuilds itself from my public activity — see <a href=".github/workflows/latest-work.yml">the workflow</a>.</sub>
