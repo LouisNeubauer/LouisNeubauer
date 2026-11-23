@@ -1,0 +1,53 @@
+name: Refresh "Latest work"
+
+# Keeps the "Latest work" section of the profile README in step with what is
+# actually happening in the repositories, without anyone having to remember.
+on:
+  schedule:
+    # Every six hours, at a quiet minute.
+    - cron: '17 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update-latest-work.mjs'
+      - '.github/workflows/latest-work.yml'
+  workflow_dispatch:
+  # Lets another repository trigger a refresh the moment it ships something.
+  # Requires a personal access token in that repository — see README of this workflow folder.
+  repository_dispatch:
+    types: [refresh-latest-work]
+
+concurrency:
+  group: latest-work
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Rebuild the section
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USER: ${{ github.repository_owner }}
+        run: node scripts/update-latest-work.mjs
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "Nothing to update."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: refresh latest work"
+          git push
