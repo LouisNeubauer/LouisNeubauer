@@ -15,6 +15,10 @@ const README = new URL('../README.md', import.meta.url);
 const START = '<!-- LATEST-WORK:START -->';
 const END = '<!-- LATEST-WORK:END -->';
 const MAX_REPOS = 5;
+// "Latest work" means current work. The 2021 bootcamp repositories are
+// finished and carry the `bootcamp-project` topic; a README tidy-up touching
+// them must not push live projects off this list.
+const ARCHIVE_TOPICS = ['bootcamp-project', 'archived-project', 'retired', 'scaffold'];
 const MAX_EVENTS = 5;
 
 const headers = {
@@ -69,11 +73,17 @@ function describeEvent(e) {
   }
 }
 
+const isArchiveRepo = (r) =>
+  Array.isArray(r.topics) && r.topics.some((t) => ARCHIVE_TOPICS.includes(t));
+
 export function render(repos, events) {
   const lines = [];
+  const shelved = new Set(
+    repos.filter(isArchiveRepo).map((r) => `${r.owner?.login ?? ''}/${r.name}`.toLowerCase()),
+  );
 
   const active = repos
-    .filter((r) => !r.private && !r.archived)
+    .filter((r) => !r.private && !r.archived && !isArchiveRepo(r))
     .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
     .slice(0, MAX_REPOS);
 
@@ -87,7 +97,11 @@ export function render(repos, events) {
     }
   }
 
-  const feed = events.map(describeEvent).filter(Boolean).slice(0, MAX_EVENTS);
+  const feed = events
+    .filter((e) => !shelved.has(String(e.repo?.name ?? '').toLowerCase()))
+    .map(describeEvent)
+    .filter(Boolean)
+    .slice(0, MAX_EVENTS);
   if (feed.length) {
     if (lines.length) lines.push('');
     lines.push('<details>');
