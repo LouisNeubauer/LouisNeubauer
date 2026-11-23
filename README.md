@@ -295,14 +295,6 @@ The repositories below are that apprenticeship, left exactly as it happened:
 | **[rails-yelp-mvp](https://github.com/LouisNeubauer/rails-yelp-mvp)** | Le Wagon (2021) — Rails MVP scaffold: database setup and model generation. <sub>`Ruby`</sub> | today |
 | **[rails-watch-list](https://github.com/LouisNeubauer/rails-watch-list)** | Le Wagon (2021) — many-to-many modelling in Rails: lists, movies and the bookmarks between them. <sub>`Ruby`</sub> | today |
 
-<details>
-<summary><b>Recent public activity</b></summary>
-
-- Pushed 0 commits to [`LouisNeubauer/Sailing-School`](https://github.com/LouisNeubauer/Sailing-School)
-- Pushed 0 commits to [`LouisNeubauer/The-AI-Edge---Restaurant-Inspection`](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)
-
-</details>
-
 <sub>Rebuilt automatically — last run 2026-11-23.</sub>
 
 <!-- LATEST-WORK:END -->
