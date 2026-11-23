@@ -4,7 +4,6 @@
 
 <p align="center">
   <a href="https://louisneubauer.com"><img alt="Website" src="https://img.shields.io/badge/Website-louisneubauer.com-0B1220?style=for-the-badge&logo=safari&logoColor=white"></a>
-  <a href="LINKEDIN_URL_HERE"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <img alt="Focus" src="https://img.shields.io/badge/Focus-Applied%20AI%20·%20Energy%20·%20Product-6366F1?style=for-the-badge">
 </p>
 
@@ -229,6 +228,5 @@ The repositories below are that apprenticeship, left exactly as it happened:
 
 <p align="center">
   <a href="https://louisneubauer.com">Website</a> ·
-  <a href="LINKEDIN_URL_HERE">LinkedIn</a> ·
   <a href="https://github.com/LouisNeubauer?tab=repositories">All repositories</a>
 </p>
