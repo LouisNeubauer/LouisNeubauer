@@ -145,7 +145,7 @@ flowchart LR
 
 Before any of this, there was a nine-week bootcamp and no autocomplete worth the name.
 
-[Le Wagon](https://www.lewagon.com/) is an intensive full-stack programme — roughly 400 hours in nine weeks, 9am to 7pm plus homework — that runs Ruby, object-oriented design, SQL and databases, front-end, Ruby on Rails, and then turns you loose on a real project. ([programme](https://www.lewagon.com/web-development-course) · [weekly structure](https://medium.com/le-wagon/9-weeks-teaching-at-lewagon-new-entrepreneur-coding-school-in-paris-d72a3daae7c7))
+[Le Wagon](https://www.lewagon.com/) is an intensive full-stack programme — nine weeks, full time, nine in the morning until seven at night with homework on top — running Ruby, object-oriented design, SQL and databases, front-end and Ruby on Rails, before turning you loose on a real project. ([programme](https://www.lewagon.com/web-development-course) · [weekly structure](https://medium.com/le-wagon/9-weeks-teaching-at-lewagon-new-entrepreneur-coding-school-in-paris-d72a3daae7c7))
 
 **I learned to code there the slow way — reading errors, drawing schemas on paper, pairing daily — and that foundation is the reason I can now direct AI tools instead of being directed by them.** You cannot review what you do not understand.
 
