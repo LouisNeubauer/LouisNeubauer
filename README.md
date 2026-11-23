@@ -90,14 +90,9 @@ Data centres are rewriting the load curve. This thesis asks where the money goes
 
 <sub>All of it my own code — written, tested and deployed, not scaffolded and abandoned.</sub>
 
-<table width="100%">
-<tr>
-<td align="center" width="25%"><h2>~87k</h2><sub>lines of TypeScript,<br>JavaScript and SQL</sub></td>
-<td align="center" width="25%"><h2>~190</h2><sub>test files across<br>five live projects</sub></td>
-<td align="center" width="25%"><h2>90+</h2><sub>API routes in<br>production</sub></td>
-<td align="center" width="25%"><h2>30</h2><sub>database models in<br>one schema alone</sub></td>
-</tr>
-</table>
+| ~87k | ~190 | 90+ | 30 |
+|:---:|:---:|:---:|:---:|
+| **lines of TypeScript, JavaScript and SQL** | **test files across five live projects** | **API routes in production** | **database models in one schema** |
 
 <sub>A test count means nothing on its own, so: <b>security</b> (CSP, Trusted Types, parameterised SQL, secret scanning) · <b>accessibility</b> (keyboard and screen reader, enforced) · <b>real-browser</b> (Chromium via Playwright) · <b>load</b> (concurrency with rate limiting proven to engage) · <b>budget</b> (the AI kill switch actually stops a runaway loop) · <b>database</b> (real Postgres, not a mock that agrees with me).</sub>
 
