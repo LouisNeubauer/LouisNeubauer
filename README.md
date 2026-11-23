@@ -154,8 +154,8 @@ The repositories below are that apprenticeship, left exactly as it happened:
 
 | Repository | The lesson |
 |---|---|
-| [**The_card**](https://github.com/LouisNeubauer/The_card) 🏆 | **Final project.** A full restaurant ordering app: authentication, restaurants → menus → orders → line items, QR-code table ordering, live cart updates. The first time all the pieces had to work together. |
-| [Le_Card](https://github.com/LouisNeubauer/Le_Card) | The first run at that domain model — kept, because the second one was better for having had a first. |
+| **The_card** 🏆 <sub>🔒 private</sub> | **Final project.** A full restaurant ordering app: authentication, restaurants → menus → orders → line items, QR-code table ordering, live cart updates. The first time all the pieces had to work together. |
+| **Le_Card** <sub>🔒 private</sub> | The first run at that domain model — kept, because the second one was better for having had a first. |
 | [rails-watch-list](https://github.com/LouisNeubauer/rails-watch-list) | Many-to-many relationships, modelled properly: lists, movies and the bookmarks between them. |
 | [rails-wikinimous](https://github.com/LouisNeubauer/rails-wikinimous) | Full CRUD by hand, one route at a time — before `resources` made it invisible. |
 | [rails-task-manager](https://github.com/LouisNeubauer/rails-task-manager) | REST conventions: seven actions, and why they are the seven. |
