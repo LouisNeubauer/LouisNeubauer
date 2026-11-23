@@ -1,45 +1,61 @@
 #!/usr/bin/env bash
-# Sets the description and topics on every repository.
+# Applies everything that is a repository *setting* rather than a file:
+# visibility, description and topics. The session that wrote the READMEs
+# could not do this — its proxy refuses settings writes — so this runs once,
+# from your own machine.
 #
-# These are repository *settings*, not files, so they could not be applied
-# from the session that wrote the READMEs — that proxy refuses settings
-# writes. Run this once, locally, with the GitHub CLI signed in:
+#   gh auth status                            # must be signed in to github.com
+#   bash scripts/apply-repo-metadata.sh
 #
-#     gh auth status          # must show github.com, with repo scope
-#     bash scripts/apply-repo-metadata.sh
-#
-# It is safe to re-run: every call simply overwrites with the same values.
+# Needs only bash, git and the GitHub CLI. Safe to re-run: every call
+# overwrites with the same values. Nothing is deleted.
 
 set -uo pipefail
 OWNER=LouisNeubauer
 ok=0; fail=0
 
-set_meta() {
-  local repo="$1" desc="$2" topics="$3"
-  if gh api -X PATCH "repos/$OWNER/$repo" -f description="$desc" --silent 2>/dev/null; then
-    jq -nc --arg t "$topics" '{names: ($t | split(","))}' \
-      | gh api -X PUT "repos/$OWNER/$repo/topics" --input - --silent 2>/dev/null
-    printf '  ✅ %s\n' "$repo"; ok=$((ok+1))
-  else
-    printf '  ❌ %s — could not update (check access)\n' "$repo"; fail=$((fail+1))
-  fi
-}
+if ! gh auth status >/dev/null 2>&1; then
+  echo "Not signed in to GitHub. Run:  gh auth login" >&2
+  exit 1
+fi
 
 make_public() {
   local repo="$1"
+  local current
+  current=$(gh api "repos/$OWNER/$repo" --jq '.visibility' 2>/dev/null) || {
+    printf '  ❌ %-24s cannot read repository\n' "$repo"; fail=$((fail+1)); return
+  }
+  if [ "$current" = "public" ]; then
+    printf '  ✓  %-24s already public\n' "$repo"; return
+  fi
   if gh api -X PATCH "repos/$OWNER/$repo" -f visibility=public --silent 2>/dev/null; then
-    printf '  ✅ %s is now public\n' "$repo"
+    printf '  ✅ %-24s now public\n' "$repo"; ok=$((ok+1))
   else
-    printf '  ❌ %s — could not change visibility\n' "$repo"
+    printf '  ❌ %-24s could not change visibility\n' "$repo"; fail=$((fail+1))
   fi
 }
 
-echo "Making the Le Wagon final project visible…"
+set_meta() {
+  local repo="$1" desc="$2" topics="$3"
+  if ! gh api -X PATCH "repos/$OWNER/$repo" -f description="$desc" --silent 2>/dev/null; then
+    printf '  ❌ %-38s description failed\n' "$repo"; fail=$((fail+1)); return
+  fi
+  # Topics without jq: one -f per name.
+  local args=() t
+  IFS=',' read -ra parts <<< "$topics"
+  for t in "${parts[@]}"; do args+=(-f "names[]=$t"); done
+  gh api -X PUT "repos/$OWNER/$repo/topics" "${args[@]}" --silent 2>/dev/null \
+    && printf '  ✅ %-38s description + %d topics\n' "$repo" "${#parts[@]}" \
+    || printf '  ⚠️  %-38s description set, topics failed\n' "$repo"
+  ok=$((ok+1))
+}
+
+echo "① Making the Le Wagon final project public…"
 make_public The_card
 make_public Le_Card
 
 echo
-echo "Applying descriptions and topics…"
+echo "② Applying descriptions and topics…"
 set_meta The-AI-Edge---Restaurant-Inspection $'MIT 15.071 "The AI Edge" \342\200\224 ranking Boston\'s 6,000 yearly restaurant inspections by risk of failing. Full analysis in nh13120/boston-restaurant-inspection-risk.' machine-learning\,lightgbm\,python\,mit\,data-science\,public-policy
 set_meta The_card $'Le Wagon final project (2021) \342\200\224 a Ruby on Rails restaurant ordering app: accounts, menus, orders and QR-code table ordering.' ruby-on-rails\,ruby\,devise\,postgresql\,bootcamp-project\,le-wagon
 set_meta Le_Card $'Le Wagon (2021) \342\200\224 the first pass at the restaurant ordering domain model in Ruby on Rails.' ruby-on-rails\,ruby\,devise\,bootcamp-project\,le-wagon
@@ -63,34 +79,45 @@ set_meta reading-list An\ unstarted\ project\ scaffold\ from\ the\ BuildYourMind
 set_meta test-idea A\ scratch\ project\ used\ to\ exercise\ the\ BuildYourMind\ template\ end\ to\ end. template\,scaffold
 set_meta draft1 $'Retired \342\200\224 the Study Tutor built here now lives in study-archive.' archived-project\,retired
 
-printf '\n%s updated, %s failed.\n' "$ok" "$fail"
-
-# ── Link the now-public repositories from the profile ────────────────────
-# Done last and only here, so the profile never carries a link to a private
-# repository — which would 404 for exactly the people the page is written for.
 echo
-echo "Linking them from the profile README…"
+echo "③ Linking the now-public repositories from the profile README…"
+
+# Only link what is actually public *right now* — re-read it from GitHub
+# rather than trusting that step ① succeeded. A link to a private repository
+# 404s for exactly the people this page is written for.
+for repo in The_card Le_Card; do
+  vis=$(gh api "repos/$OWNER/$repo" --jq '.visibility' 2>/dev/null)
+  if [ "$vis" != "public" ]; then
+    printf '  –  %s is still %s; leaving the profile links alone.\n' "$repo" "${vis:-unreadable}"
+    printf '\n%s updated, %s failed.\n' "$ok" "$fail"
+    exit 0
+  fi
+done
+
 cd "$(dirname "$0")/.."
 python3 - <<'RELINK'
-import pathlib, subprocess
-p = pathlib.Path("README.md"); s = p.read_text()
-subs = [
-    ("| **The_card** 🏆 <sub>🔒 private</sub> |",
-     "| [**The_card**](https://github.com/LouisNeubauer/The_card) 🏆 |"),
-    ("| **Le_Card** <sub>🔒 private</sub> |",
-     "| [Le_Card](https://github.com/LouisNeubauer/Le_Card) |"),
-]
+import pathlib, subprocess, sys
+p = pathlib.Path("README.md")
+if not p.exists():
+    print("  – README.md not found; run this from inside the profile repository"); sys.exit(0)
+s = p.read_text()
+subs = [("| **The_card** 🏆 <sub>🔒 private</sub> |",
+         "| [**The_card**](https://github.com/LouisNeubauer/The_card) 🏆 |"),
+        ("| **Le_Card** <sub>🔒 private</sub> |",
+         "| [Le_Card](https://github.com/LouisNeubauer/Le_Card) |")]
 changed = False
 for old, new in subs:
     if old in s:
         s = s.replace(old, new); changed = True
-if changed:
-    p.write_text(s)
-    subprocess.run(["git", "add", "README.md"], check=True)
-    subprocess.run(["git", "commit", "-m",
-        "Link The_card and Le_Card now that they are public"], check=True)
-    subprocess.run(["git", "push"], check=True)
-    print("  ✅ profile README updated and pushed")
-else:
-    print("  – profile README already links them")
+if not changed:
+    print("  –  profile README already links them"); sys.exit(0)
+p.write_text(s)
+for cmd in (["git","add","README.md"],
+            ["git","commit","-m","Link The_card and Le_Card now that they are public"],
+            ["git","push"]):
+    if subprocess.run(cmd).returncode != 0:
+        print("  ⚠️  README updated locally, but the push did not complete — commit it yourself."); sys.exit(0)
+print("  ✅ profile README updated and pushed")
 RELINK
+
+printf '\n%s updated, %s failed.\n' "$ok" "$fail"
