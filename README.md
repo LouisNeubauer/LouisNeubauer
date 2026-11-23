@@ -290,10 +290,18 @@ The repositories below are that apprenticeship, left exactly as it happened:
 | Repository | What it is | Last update |
 |---|---|---|
 | **[LouisNeubauer](https://github.com/LouisNeubauer/LouisNeubauer)** | Profile README <sub>`JavaScript`</sub> | today |
-| **[The-AI-Edge---Restaurant-Inspection](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)** | _No description yet._ | 11 days ago |
-| **[R_a_R](https://github.com/LouisNeubauer/R_a_R)** | next try <sub>`Ruby`</sub> | 5 years ago |
-| **[rails-watch-list](https://github.com/LouisNeubauer/rails-watch-list)** | Challenge 1 12.08.2021 <sub>`Ruby`</sub> | 5 years ago |
-| **[rails-yelp-mvp](https://github.com/LouisNeubauer/rails-yelp-mvp)** | Challenge 2 11.08.2021 <sub>`Ruby`</sub> | 5 years ago |
+| **[The_card](https://github.com/LouisNeubauer/The_card)** | Le Wagon final project (2021) — a Ruby on Rails restaurant ordering app: accounts, menus, orders and QR-code table ordering. <sub>`Ruby`</sub> | today |
+| **[R_a_R](https://github.com/LouisNeubauer/R_a_R)** | Le Wagon (2021) — Rails application scaffold from the final project sprint. <sub>`Ruby`</sub> | today |
+| **[rails-yelp-mvp](https://github.com/LouisNeubauer/rails-yelp-mvp)** | Le Wagon (2021) — Rails MVP scaffold: database setup and model generation. <sub>`Ruby`</sub> | today |
+| **[rails-watch-list](https://github.com/LouisNeubauer/rails-watch-list)** | Le Wagon (2021) — many-to-many modelling in Rails: lists, movies and the bookmarks between them. <sub>`Ruby`</sub> | today |
+
+<details>
+<summary><b>Recent public activity</b></summary>
+
+- Pushed 0 commits to [`LouisNeubauer/Sailing-School`](https://github.com/LouisNeubauer/Sailing-School)
+- Pushed 0 commits to [`LouisNeubauer/The-AI-Edge---Restaurant-Inspection`](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)
+
+</details>
 
 <sub>Rebuilt automatically — last run 2026-11-23.</sub>
 
