@@ -90,7 +90,7 @@ Data centres are rewriting the load curve. This thesis asks where the money goes
 
 <sub>All of it my own code — written, tested and deployed, not scaffolded and abandoned.</sub>
 
-<table>
+<table width="100%">
 <tr>
 <td align="center" width="25%"><h2>~87k</h2><sub>lines of TypeScript,<br>JavaScript and SQL</sub></td>
 <td align="center" width="25%"><h2>~190</h2><sub>test files across<br>five live projects</sub></td>
