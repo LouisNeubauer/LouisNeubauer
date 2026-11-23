@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 400" width="1240" height="400" role="img" aria-label="Retrieval pipeline: a query is routed to a lexical arm, a dense vector arm and a concept-graph arm; their ranks are fused by Reciprocal Rank Fusion, reranked by a cross-encoder, adjusted by priors, and scored against a golden set.">
+  <defs>
+    <linearGradient id="rbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0B1220"/><stop offset="100%" stop-color="#0E1A2F"/></linearGradient>
+    <linearGradient id="racc" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#38BDF8"/><stop offset="100%" stop-color="#6366F1"/></linearGradient>
+    <marker id="ra" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#94A3B8"/></marker>
+    <marker id="rd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#38BDF8"/></marker>
+    <style>
+      .n { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:13.5px; font-weight:700; fill:#F8FAFC; }
+      .d { font-family: ui-sans-serif,-apple-system,'Segoe UI',Inter,Helvetica,Arial,sans-serif; font-size:10.5px; fill:#94A3B8; }
+      .tag { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:9.5px; fill:#7DD3FC; letter-spacing:.8px; }
+      .note{ font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:10.5px; fill:#FDBA74; letter-spacing:.4px; }
+      .sub { font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:9.5px; fill:#64748B; letter-spacing:.4px; }
+    </style>
+  </defs>
+  <rect width="1240" height="400" rx="14" fill="url(#rbg)"/>
+  <rect x="0" y="0" width="1240" height="3" rx="1.5" fill="url(#racc)"/>
+
+  <rect x="36" y="162" width="120" height="62" rx="10" fill="#1E293B" stroke="#38BDF8"/>
+  <text x="96" y="190" class="n" text-anchor="middle">Query</text>
+  <text x="96" y="208" class="d" text-anchor="middle">a student's question</text>
+
+  <!-- three arms -->
+  <rect x="210" y="44"  width="238" height="72" rx="10" fill="#172033" stroke="#334155"/>
+  <text x="329" y="70"  class="n" text-anchor="middle">Lexical arm</text>
+  <text x="329" y="88"  class="d" text-anchor="middle">Postgres full-text search</text>
+  <text x="329" y="104" class="tag" text-anchor="middle">GIN-INDEXED TSVECTOR</text>
+
+  <rect x="210" y="157" width="238" height="72" rx="10" fill="#312E81" stroke="#818CF8"/>
+  <text x="329" y="183" class="n" text-anchor="middle">Dense arm</text>
+  <text x="329" y="201" class="d" text-anchor="middle">voyage-4-large · 1024-d</text>
+  <text x="329" y="217" class="tag" text-anchor="middle">COSINE OVER HNSW</text>
+
+  <rect x="210" y="270" width="238" height="72" rx="10" fill="#172033" stroke="#334155"/>
+  <text x="329" y="296" class="n" text-anchor="middle">Concept arm</text>
+  <text x="329" y="314" class="d" text-anchor="middle">concept ↔ chunk graph</text>
+  <text x="329" y="330" class="tag" text-anchor="middle">TAGGED CORPUS</text>
+
+  <rect x="508" y="157" width="196" height="72" rx="10" fill="#7C2D12" stroke="#F97316"/>
+  <text x="606" y="183" class="n" text-anchor="middle">Rank fusion</text>
+  <text x="606" y="201" class="d" text-anchor="middle">Reciprocal Rank Fusion</text>
+  <text x="606" y="217" class="tag" text-anchor="middle" fill="#FDBA74">k = 60</text>
+
+  <rect x="764" y="157" width="196" height="72" rx="10" fill="#831843" stroke="#EC4899"/>
+  <text x="862" y="183" class="n" text-anchor="middle">Cross-encoder</text>
+  <text x="862" y="201" class="d" text-anchor="middle">rerank-2.5-lite</text>
+  <text x="862" y="217" class="tag" text-anchor="middle" fill="#F9A8D4">READS QUERY + PASSAGE</text>
+
+  <rect x="1020" y="157" width="184" height="72" rx="10" fill="#065F46" stroke="#10B981"/>
+  <text x="1112" y="183" class="n" text-anchor="middle">Ranked chunks</text>
+  <text x="1112" y="201" class="d" text-anchor="middle">each citing its slide</text>
+  <text x="1112" y="217" class="tag" text-anchor="middle" fill="#6EE7B7">L7 · SLIDE 12</text>
+
+  <g stroke="#94A3B8" stroke-width="1.6" fill="none" marker-end="url(#ra)">
+    <path d="M156 193 H180 V80  H204"/>
+    <path d="M156 193 H180 V306 H204"/>
+    <path d="M448 80  H478 V193 H502"/>
+    <path d="M448 306 H478 V193 H502"/>
+    <path d="M704 193 H758"/>
+    <path d="M960 193 H1014"/>
+  </g>
+  <g stroke="#38BDF8" stroke-width="1.8" fill="none" marker-end="url(#rd)">
+    <path d="M156 193 H204"/>
+    <path d="M448 193 H502"/>
+  </g>
+
+  <path d="M1112 229 V268 H606 V235" stroke="#64748B" stroke-width="1.4" fill="none" marker-end="url(#ra)" stroke-dasharray="5 4"/>
+  <text x="860" y="262" class="sub" text-anchor="middle">SCORED AGAINST A HAND-BUILT GOLDEN SET — EVERY CHANGE IS A MEASUREMENT</text>
+
+  <text x="36" y="372" class="note">RANKS ARE FUSED, NEVER RAW SCORES: A BM25 SCORE AND A COSINE DISTANCE ARE NOT COMPARABLE QUANTITIES.</text>
+</svg>

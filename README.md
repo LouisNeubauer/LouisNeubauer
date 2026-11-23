@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://louisneubauer.com"><img alt="Website" src="https://img.shields.io/badge/louisneubauer.com-0B1220?style=for-the-badge&logo=safari&logoColor=white"></a>
+  <a href="CASE-STUDIES.md"><img alt="Case studies" src="https://img.shields.io/badge/Case%20studies-0B1220?style=for-the-badge&logo=readme&logoColor=white"></a>
   <a href="https://www.linkedin.com/in/louis-neubauer/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <a href="https://github.com/nh13120/boston-restaurant-inspection-risk"><img alt="Featured project" src="https://img.shields.io/badge/Featured%20project-6366F1?style=for-the-badge"></a>
 </p>
@@ -114,6 +114,8 @@ Data centres are rewriting the load curve. This thesis asks where the money goes
 
 ## 📦 Projects
 
+<sub>The repositories are private — <b><a href="CASE-STUDIES.md">the case studies</a></b> show the screens and the decisions behind three of them.</sub>
+
 | Project | What it is | Stack | |
 |---|---|---|---|
 | **Study Archive** 🔒 | A semester of course material, embedded into pgvector and answerable by a tutor that **cites the exact slide** | `Next.js` `TypeScript` `Prisma` `pgvector` `MCP` | 🟢 Running |
@@ -209,5 +211,5 @@ Branch-and-review from day one, nine weeks into learning to code. That is the pa
 
 <p align="center">
   <b>Open to summer 2027 internships</b> in finance, applied AI and data-driven product.<br>
-  <a href="https://louisneubauer.com">Website</a> · <a href="https://www.linkedin.com/in/louis-neubauer/">LinkedIn</a> · <a href="https://github.com/LouisNeubauer?tab=repositories">All repositories</a>
+  <a href="CASE-STUDIES.md">Case studies</a> · <a href="https://www.linkedin.com/in/louis-neubauer/">LinkedIn</a> · <a href="https://github.com/LouisNeubauer?tab=repositories">All repositories</a>
 </p>
