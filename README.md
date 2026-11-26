@@ -209,7 +209,7 @@ Branch-and-review from day one, nine weeks into learning to code. That is the pa
 
 </details>
 
-<sub>Rebuilt automatically — last run 2026-11-25.</sub>
+<sub>Rebuilt automatically — last run 2026-11-26.</sub>
 
 <!-- LATEST-WORK:END -->
 
