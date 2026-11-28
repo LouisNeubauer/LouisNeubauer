@@ -200,7 +200,7 @@ Branch-and-review from day one, nine weeks into learning to code. That is the pa
 
 | Repository | What it is | Last update |
 |---|---|---|
-| **[The-AI-Edge---Restaurant-Inspection](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)** | MIT 15.071 "The AI Edge" — ranking Boston's 6,000 yearly restaurant inspections by risk of failing. Full analysis in nh13120/boston-restaurant-inspection-risk. | 4 days ago |
+| **[The-AI-Edge---Restaurant-Inspection](https://github.com/LouisNeubauer/The-AI-Edge---Restaurant-Inspection)** | MIT 15.071 "The AI Edge" — ranking Boston's 6,000 yearly restaurant inspections by risk of failing. Full analysis in nh13120/boston-restaurant-inspection-risk. | 5 days ago |
 
 <details>
 <summary><b>Recent public activity</b></summary>
